@@ -6,7 +6,7 @@ import time
 device_name = input("Enter device name: ")
 username = input("Enter username: ")
  
-#HOST = device_name + '.dcom.testsite.com'
+
 HOST = device_name 
 iosv_l2 = {
     'device_type': 'cisco_ios',
