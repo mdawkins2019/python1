@@ -16,11 +16,10 @@ iosv_l2 = {
 }
 
 net_connect = ConnectHandler(**iosv_l2)
-#net_connect.find_prompt()
 output = net_connect.send_command('show ip interface brief')
 
 print (output) 
-time.sleep (90)     
+time.sleep (3)     
 net_connect.send_command('end\n')
 
 
