@@ -15,23 +15,23 @@ def loginTask():
 	password = getpass()
 	listname = input ("Enter list name: ")
 
-	subname = datetime.now().strftime("%Y%m%d-%H%M%S")
+	#subname = datetime.now().strftime("%Y%m%d-%H%M%S")
 
-	filename = "/REPORTS/show_model_number/show_model_number" + listname + subname + ".csv" 
+	#filename = "/REPORTS/show_model_number/show_model_number" + listname + subname + ".csv" 
 
-	print ("Writing output to REPORTS directory...")
-	time.sleep(1)
+	#print ("Writing output to REPORTS directory...")
+	#time.sleep(1)
 
-	file = open(filename , 'w')
+	#file = open(filename , 'w')
 
-	with open("/LISTS/" + listname + ".txt") as f:
-		devices_list = f.read().splitlines()
+	#with open("/LISTS/" + listname + ".txt") as f:
+		#devices_list = f.read().splitlines()
 
 
-	for devices in devices_list:
-		print ('Connecting to device ' + devices)
+	#for devices in devices_list:
+	#	print ('Connecting to device ' + devices)
     
-		HOST = devices
+		#HOST = devices
 		ios_device = {
         'device_type': 'cisco_ios',
         'ip': HOST, 
