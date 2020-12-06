@@ -32,7 +32,6 @@ def loginTask():
 		print ('Connecting to device ' + devices)
     
 		HOST = devices
-		#HOST = ('10.10.90.32')
 		ios_device = {
         'device_type': 'cisco_ios',
         'ip': HOST, 
