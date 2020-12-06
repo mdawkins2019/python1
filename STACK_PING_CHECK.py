@@ -56,10 +56,10 @@ for devices in devices_list:
         print ('Some other error: ' + str(unknown_error) )
         continue
     output0 = net_connect.send_command('show run | inc hostname')
-    output1 = net_connect.send_command('ping 10.101.200.100 source vlan 300 repeat 20 size 1500 ' ) 
-    output2 = net_connect.send_command('ping 10.102.95.6 source vlan 320 repeat 20 size 1500' )
-    output3 = net_connect.send_command('ping 10.10.61.61 source vlan 310 repeat 20 size 1500' )
-    output4 = net_connect.send_command('ping 10.99.201.1 source vlan 2160 repeat 20 size 1500' )
+    output1 = net_connect.send_command('ping ip_address source vlan 300 repeat 20 size 1500 ' ) 
+    output2 = net_connect.send_command('ping ip_address source vlan 320 repeat 20 size 1500' )
+    output3 = net_connect.send_command('ping ip_address source vlan 310 repeat 20 size 1500' )
+    output4 = net_connect.send_command('ping ip_address source vlan 2160 repeat 20 size 1500' )
     
     str1 = "% Invalid source interface - IP not enabled or interface is down"
     
