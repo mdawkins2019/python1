@@ -13,47 +13,18 @@ def loginTask():
 	
 	username = input("Enter username: ")
 	password = getpass()
-	listname = input ("Enter list name: ")
-
-	#subname = datetime.now().strftime("%Y%m%d-%H%M%S")
-
-	#filename = "/REPORTS/show_model_number/show_model_number" + listname + subname + ".csv" 
-
-	#print ("Writing output to REPORTS directory...")
-	#time.sleep(1)
-
-	#file = open(filename , 'w')
-
-	#with open("/LISTS/" + listname + ".txt") as f:
-		#devices_list = f.read().splitlines()
-
-
-	#for devices in devices_list:
-	#	print ('Connecting to device ' + devices)
+	host = input("Enter host: ")
+	
     
-		#HOST = devices
-		ios_device = {
-        'device_type': 'cisco_ios',
-        'ip': HOST, 
-        'username': username,
-        'password': password
-    }
+	ios_device = {
+    'device_type': 'cisco_ios',
+    'ip': host, 
+    'username': username,
+    'password': password
+     }
+    
+	net_connect = ConnectHandler(**ios_device)
+	#output0 = net_connect.send_command('show run | inc hostname')
+	#print (output0[10:40])   
 
-		try:
-			net_connect = ConnectHandler(**ios_device)
-		except (AuthenticationException):
-			print ('Authentication failure: ' + HOST)
-			continue
-		except (NetMikoTimeoutException):
-			print ('Timeout to device: ' + HOST)
-			continue
-		except (EOFError):
-			print ('End of file while attempting device ' + HOST)
-			continue
-		except (SSHException):
-			print ('SSH Issue. Are you sure SSH is enabled? ' + HOST)
-			continue
-		except Exception as unknown_error:
-			print ('Some other error: ' + str(unknown_error) )
-			continue      
 loginTask()

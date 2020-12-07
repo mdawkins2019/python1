@@ -7,10 +7,8 @@ from netmiko.ssh_exception import NetmikoAuthenticationException
 from netmiko.ssh_exception import NetMikoTimeoutException
 import sys
 from getpass import getpass
+from login_task import loginTask
 
-#device_name = input("Enter device name: ")
-username = input("Enter username: ")
-password = getpass()
  
 with open('./LISTS/device_list.txt') as f:
     devices_list = f.read().splitlines()
@@ -18,12 +16,12 @@ with open('./LISTS/device_list.txt') as f:
 for devices in devices_list:
     print ('Connecting to device ' + str(devices))
     ip_address_of_device = devices
-    ios_device = {
-        'device_type': 'cisco_ios',
-        'ip': ip_address_of_device, 
-        'username': username,
-        'password': password
-    }
+    #ios_device = {
+        #'device_type': 'cisco_ios',
+        #'ip': ip_address_of_device, 
+        #'username': username,
+        #'password': password
+    #}
 
     try:
         net_connect = ConnectHandler(**ios_device)
